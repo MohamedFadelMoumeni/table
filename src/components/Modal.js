@@ -1,17 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
-import Directory from './Directory';
+import DirectoryForProgram from './DirectoryForProgram';
+import  DirectoryForEpisode from './DirectoryForEpisode';
 import Search from '../assets/search.svg';
-import Checkbox from './Checkbox';
 
-const Modal = ({openModal}) => {
+const Modal = ({openModal, episode}) => {
     return (
         <ModalContainer openModal={openModal}>
             <SearchBox>
                 <Input placeholder="البحث" type="text" />
                 <SearchImg src={Search} />
             </SearchBox>
-            <Directory />
+           {
+               episode ?
+               (
+                    <DirectoryForEpisode />
+               ) :
+               (
+                   <DirectoryForProgram />
+               )
+           }
            
             <Button>التاكيد</Button>
            
@@ -40,6 +48,7 @@ display: flex;
 align-items:center;
 background: rgba(215, 221, 248, 0.52);
 border-radius: 5px;
+height: 30px;
 `;
 const SearchImg = styled.img`
 width: 1.5em;

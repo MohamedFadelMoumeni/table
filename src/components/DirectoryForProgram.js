@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import Checkbox from './Checkbox';
 
-const Directory = () =>{
+const DirectoryForProgram = () =>{
     return (
         <DirectoryContainer>
             <Item>
@@ -26,7 +26,7 @@ const Directory = () =>{
     )
 }
 
-export default Directory;
+export default DirectoryForProgram;
 
 const DirectoryContainer = styled.div`
 width: 100;

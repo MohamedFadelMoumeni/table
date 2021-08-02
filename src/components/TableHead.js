@@ -6,11 +6,13 @@ import Filter from '../assets/filter.svg';
 import Path from '../assets/Path.svg';
 import Arrow from '../assets/Arrow.svg';
 import Modal from './Modal';
+import CalendarContainer from './Calendar';
 
 
 const TableHead = () => {
     const [openOne, setOpenModal] = useState(false);
     const [openTwo, setOpenModalTwo] = useState(false);
+    const [openThreen, setOpenThree] =  useState(false);
     return (
         <TableHeadContainer>
             <DropDown last>
@@ -20,7 +22,7 @@ const TableHead = () => {
       <DropDown  openModal={openOne}>
         <Text onClick={() => setOpenModal(!openOne)} drop>الحلقة</Text>
           <Img  openModal={openOne} src={Path} />
-          <Modal  openModal={openOne}/>
+          <Modal episode openModal={openOne}/>
         </DropDown>
         <DropDown  openModal={openTwo}>
         <Text onClick={() => setOpenModalTwo(!openTwo)} drop>البرنامج</Text>
@@ -32,8 +34,9 @@ const TableHead = () => {
           <Img src={Path} />
         </DropDown>
         <DropDown>
-        <Text drop>تاريخ التسجيل</Text>
-          <Img src={Path} />
+        <Text onClick={() => setOpenThree(!openThreen)} drop>تاريخ التسجيل</Text>
+          <Img openModal={openThreen} src={Path} />
+         
         </DropDown>
         <FilterContainer>
           <Img src={Filter} />

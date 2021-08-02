@@ -70,7 +70,7 @@ const CheckboxContainer = styled.label`
   transform: rotate(45deg);
 }
 .title{
-    flex: 1;
+    width: 100%;
     font-size: 14px;
     text-align: right;
     margin-right: 50px;
