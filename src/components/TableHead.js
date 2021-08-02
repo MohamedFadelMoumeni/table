@@ -14,33 +14,33 @@ const TableHead = () => {
     return (
         <TableHeadContainer>
             <DropDown last>
-      <img src={Arrow} />
+      <Img src={Arrow} />
         <Text style={{color: '#EA0234'}}>ازالة الفلترة</Text>
         </DropDown>
       <DropDown  openModal={openOne}>
         <Text onClick={() => setOpenModal(!openOne)} drop>الحلقة</Text>
-          <img src={Path} />
+          <Img  openModal={openOne} src={Path} />
           <Modal  openModal={openOne}/>
         </DropDown>
         <DropDown  openModal={openTwo}>
         <Text onClick={() => setOpenModalTwo(!openTwo)} drop>البرنامج</Text>
-          <img src={Path} />
+          <Img openModal={openTwo} src={Path} />
           <Modal  openModal={openTwo}/>
         </DropDown>
         <DropDown>
         <Text drop>وضعية الحساب</Text>
-          <img src={Path} />
+          <Img src={Path} />
         </DropDown>
         <DropDown>
         <Text drop>تاريخ التسجيل</Text>
-          <img src={Path} />
+          <Img src={Path} />
         </DropDown>
         <FilterContainer>
-          <img src={Filter} />
+          <Img src={Filter} />
         </FilterContainer>
         <SearchBox>
         <Input placeholder="البحث" type="text"/>
-          <img src={Search} />
+          <Img src={Search} />
         </SearchBox>
 
         </TableHeadContainer>
@@ -94,4 +94,9 @@ flex: 1;
 background:transparent;
 outline: none;
 text-align:right;
+`;
+const Img = styled.img`
+ margin: 0 10px;
+  transition: all .5s;
+  transform: ${props => props.openModal ? 'rotate(180deg)' : 'rotate(0deg);'};
 `;

@@ -1,14 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 import Directory from './Directory';
+import Search from '../assets/search.svg';
+import Checkbox from './Checkbox';
 
 const Modal = ({openModal}) => {
     return (
         <ModalContainer openModal={openModal}>
             <SearchBox>
                 <Input placeholder="البحث" type="text" />
+                <SearchImg src={Search} />
             </SearchBox>
             <Directory />
+           
             <Button>التاكيد</Button>
            
         </ModalContainer>
@@ -32,8 +36,15 @@ z-index: 30;
 `;
 
 const SearchBox = styled.div`
+display: flex;
+align-items:center;
 background: rgba(215, 221, 248, 0.52);
 border-radius: 5px;
+`;
+const SearchImg = styled.img`
+width: 1.5em;
+height:1.5em;
+margin: 0 .5em;
 `;
 
 const Input = styled.input`
@@ -43,6 +54,10 @@ border: 0;
 outline: none;
 text-align: right;
 padding: 0 5px;
+color: #8280FF;
+&::placeholder{
+    color: #8280FF;
+}
 `;
 
 const Button = styled.a`
@@ -53,4 +68,5 @@ background: #3D42DF;
 border-radius: 5px;
 color: #fff;
 text-align: center;
+cursor: pointer;
 `;
